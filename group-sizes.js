@@ -1,10 +1,17 @@
 const prompt = require('prompt-sync')({sigint: true})
 
-let num1 = Number(prompt (" What is the size of your class? "))
+let classsize = Number(prompt (" What is the size of your class? "))
 
-if (num1 /= 3){
-    console.log(" Number of Groups")
+if ((classsize % 3) === 0){
+    console.log((classsize / 3) * "groups of 2")
 }
-else if(num1 /= 2){
-    console.log(" Number of Groups")
+else if((classsize % 2) === 0){
+    console.log("groups of 3 " + (classsize - 2) / 4)
+    console.log("groups of 2 " + (classsize - 2) / (classsize/2))
+
+}
+else if((classsize % 1) === 0){
+    console.log("groups of 3 " + (classsize - 1) / 4)
+    console.log("groups of 2 " + (classsize / classsize))
+
 }
